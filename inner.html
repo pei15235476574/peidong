@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin:0;
+        padding:0;
+    }
+    .ball{
+        position: relative;
+        width:80px;
+        height:80px;
+        background:-webkit-linear-gradient(left,purple,orange);
+        border-radius: 50%;
+        margin-top: 20px;
+        text-align: center;
+        line-height: 80px;
+        color:#fff;
+        
+    }
+    /* #ball1,#ball2,#ball3{
+        transition: all 1;
+    } */
+</style>
+<body>
+    <!--  -->
+    <div>
+        <p id="ball1" class="ball">1</p>
+        <p id="ball2" class="ball">2</p>
+        <p id="ball3" class="ball">3</p> 
+        <p id="ball4" class="ball">4</p>
+        <p id="ball5" class="ball">5</p> 
+    </div>
+</body>
+<script src="inner.js"></script>
+<script>
+   
+    //     function ajaxFuc(url){
+    //         return new Promise(function(resolve,reject){
+    //             var ajax = new XMLHttpRequest();
+    //             ajax.open('get',url,true);
+    //             ajax.send();
+    //             ajax.onreadystatechange = function () {
+    //             if (ajax.readyState==4 &&ajax.status==200) {
+    //                     var data = JSON.parse(ajax.responseText);
+    //                     for(key in data){
+    //                         console.log('姓名:'+data[key].name);
+    //                         console.log('职位:'+data[key].position);
+    //                     }
+    //             　　}
+    //                 resolve();
+    //                 reject();
+    //             }
+    //         })
+            
+    //      }
+    // ajaxFuc('index.json').then(function(data){
+    //     console.log('请求成功')
+    //     return ajaxFuc('inner.json');
+    // }).then(function(data){
+    //     console.log('请求成功了么')
+    // }).catch(err=>console.log(err));
+    function* helloWorldGenerator() {
+        yield 'hello';
+        yield 'world';
+        return 'ending';
+    }   
+var hw = helloWorldGenerator();
+console.log(hw.next());
+console.log(hw.next());
+const foo = 'bar';
+const baz = {foo};
+console.log(baz);
+
+let birth = '2000/01/01';
+
+const Person = {
+
+  name: '张三',
+
+  //等同于birth: birth
+  birth,
+
+  // 等同于hello: function ()...
+  hello() { console.log('我的名字是', this.name); }
+};
+// console.log(Person.birth);
+// console.log(Person.name);
+// Person.hello();
+</script>
+</html>

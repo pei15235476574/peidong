@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+
+</style>
+<body>
+    <input id="inp" type="text" value="">
+    <p id='demo'></p>
+</body>
+<script>
+    // 双向绑定
+    //改变inp的值的时候 obj.name会改变 改变obj.name的时候inp也会改变
+    // defineProperty() 参数 target 目标对象 key 目标对象的属性名 空对象 {get,set}
+ //vue 的实现原理  通过Object上面的defineProperty 的get 和set 进行数据劫持 ，只是vue用 observer 来深层监控对象，vue 通过compile 把最后的结果编译成dom  
+
+    // 实现原理 
+    //obersever 
+    // let obj = {};
+    // Object.defineProperty(obj,'name',{
+    //     get(){//获取值
+    //        return val;
+    //     },
+    //     set(newVal){//设置值
+    //         console.log('触发了新的方法');
+    //         inp.value = newVal;
+    //         val = newVal; //让val等于新设置的 newVal
+    //         // console.log(val,newVal + ' 新旧值比对');
+    //     }
+    // })
+    // inp.addEventListener('input',function(e){
+    //          obj.name = e.target.value;
+    //         demo.innerHTML = obj.name;
+    // })
+</script>
+<!-- <script>
+        let obj = {};
+        obj.name = 1;
+        Object.defineProperty(obj,'name',{
+            writable:true,//是否可写入
+            enumerable:false,//是否可枚举  就是是否可使用for in 遍历
+            configurable:false,//是否可配置
+            // get(){
+            //     return 1;
+            // }
+        })
+        delete obj.name // 在configurable:false 的时候 不能被删除
+</script> -->
+<script>
+    var obj = [{type:1,name:'张三'},{type:1,name:'张三'},{type:2,name:'小明'}];
+    var newArr = [];
+    for(var i = 0; i < obj.length; i++){
+        console.log(obj[0])
+    }
+    console.log(newArr);
+</script>
+</html>

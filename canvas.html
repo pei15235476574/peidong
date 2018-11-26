@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    #mycanvas{
+       position: absolute;
+       left: 0;
+       right: 0;
+       top: 0;
+       bottom: 0;
+       margin:auto;
+       background-color:yellow;
+    }
+    .baiqi{
+        width:20px;
+        height:20px;
+        background-color:orange;
+        border-radius: 50%;
+    }
+</style>
+<body>
+    <canvas id="mycanvas" width="600" height="600" style="border:1px solid #ccc"></canvas>
+</body>
+<script>
+   var c=document.getElementById("mycanvas");
+    var ctx=c.getContext("2d");  
+    for(var i = 0; i < 20; i++){
+         ctx.moveTo(0,40*i);
+         ctx.lineTo(600,40*i);
+         ctx.moveTo(40*i,0);
+         ctx.lineTo(40*i,600);
+    }    
+    c.addEventListener('click',getEventPosition);
+    ctx.stroke();
+    function getEventPosition(ev){
+        var x,y;
+        if(ev.layerX ||ev.layerY == 0){
+            x = ev.layerX;
+            y = ev.layerY;
+        }else if(ev.offsetX || ev.offsetY == 0){ // 欧鹏浏览器
+            x = ev.offsetX;
+            x = ev.offsetY;
+        }
+        console.log(x);
+        let cli = ev.layerX;
+        let cliy = ev.layerY;
+            if(x == 40*2 || y == 40 ){
+                ctx.beginPath();
+                ctx.arc(cli,cliy,18,1,25,false);
+                ctx.fillStyle="black";
+                ctx.fill();
+                
+             }
+             if(x == 40*2 || y == cliy ){
+                ctx.beginPath();
+                ctx.arc(cli,cliy,18,1,25,false);
+                ctx.fillStyle="#fff";
+                ctx.fill();
+             }
+            console.log(baiyuan);
+    }
+</script>
+</html>

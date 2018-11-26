@@ -1,0 +1,20 @@
+[
+    {
+        "name":"王帅",
+        "age":30,
+        "position":"前端开发工程师",
+        "salary":"10k"
+    },
+    {
+        "name":"郭董帅",
+        "age":20,
+        "position":"前端开发工程师",
+        "salary":"13k"
+    },
+    {
+        "name":"高鹏",
+        "age":28,
+        "position":"前端开发工程师",
+        "salary":"11k"
+    }
+]
